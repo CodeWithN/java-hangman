@@ -1,26 +1,19 @@
 package pl.edu.agh.hangman;
-import java.util.Random;
+//import java.util.Random;
 import java.util.Scanner;
 
 
 public class Hangman {
     public static void main(String[] args) {
-        String[] words = {"DYNAMO", "ulewa", "Nagoya"};
-        Random random = new Random();
+
         Scanner scan = new Scanner(System.in);
-
-
         int failCounter = 0;
-        String word = words[random.nextInt(words.length)];
-       // String guessWord = word;
 
-
+        //Randomize a word from file
         new SelectWord().selectWord();
         String guessWord = new SelectWord().selectWord();
 
-
-        System.out.println("secret guess word is: " + word);
-
+        System.out.println("Secret guess word is: " + guessWord);
         System.out.println("Start of the game! ");
 
         String guess = "";
@@ -28,7 +21,6 @@ public class Hangman {
             guess = guess +"-";
         }
         System.out.println("You need to guess: "+ guess);
-
 
         while (failCounter <= 7) {
 
@@ -38,18 +30,13 @@ public class Hangman {
             if (guessWord.contains( value)){
                 System.out.println("good guess");
 
-
             }else{
                 System.out.println("Next wrong guess..");
                 failCounter++;
                 System.out.println(HANGMANPICS[failCounter]);
-
             }
-
         }
     }
-
-
         public static final String[] HANGMANPICS = new String[]{
                 "  +---+\n" +
                         "  |   |\n" +
@@ -101,6 +88,4 @@ public class Hangman {
                         "      |\n" +
                         "========"
         };
-
-
 }
