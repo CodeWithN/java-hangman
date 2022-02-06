@@ -8,14 +8,29 @@ import java.util.Scanner;
 public class SelectWord {
 
 
-    private void selectWord() {
+    public static void main(String[] args) {
+        new SelectWord().selectWord();
+        System.out.println(new SelectWord().selectWord());
+    }
+    public String selectWord() {
 
-        File f = new File("resources/slowa.txt");
+        File f = new File("src/main/resources/slowa.txt");
+
         try (Scanner scanner = new Scanner(f)) {
-            String word = scanner.next();
+            int index = new Random().nextInt(1600);
+
+            int i = 0;
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                i++;
+                if (i == index) {
+                    return line;
+                }
+            }
 
         } catch (Exception ex) {
-            System.out.println("INFO No valid conf data");
-        }
+            System.out.println();
+
+        } return "";
     }
 }
