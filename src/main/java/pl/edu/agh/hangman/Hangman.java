@@ -9,9 +9,16 @@ public class Hangman {
         Random random = new Random();
         Scanner scan = new Scanner(System.in);
 
+
         int failCounter = 0;
         String word = words[random.nextInt(words.length)];
-        String guessWord = word;
+       // String guessWord = word;
+
+
+        new SelectWord().selectWord();
+        String guessWord = new SelectWord().selectWord();
+
+
         System.out.println("secret guess word is: " + word);
 
         System.out.println("Start of the game! ");
