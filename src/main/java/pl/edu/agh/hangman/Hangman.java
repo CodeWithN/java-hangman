@@ -1,5 +1,9 @@
 package pl.edu.agh.hangman;
 
+import java.io.File;
+import java.util.Random;
+import java.util.Scanner;
+
 public class Hangman {
 
     public static final String[] HANGMANPICS = new String[]{
@@ -55,5 +59,9 @@ public class Hangman {
     };
 
     public static void main(String[] args) {
-    }
+
+
+
+
 }
+
